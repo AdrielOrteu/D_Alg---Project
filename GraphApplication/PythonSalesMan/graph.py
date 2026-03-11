@@ -48,15 +48,6 @@ class Edge:
 
 # EDGE =========================================================================
 
-class Edge:
-    def __init__(self,name,length,origin,destination):
-        self.Name = name
-        self.Length = length
-        self.Origin = origin
-        self.Destination = destination
-        self.ReverseEdge = []
-        self.Saved=False
-
 # GRAPH =======================================================================
 
 class Graph:
