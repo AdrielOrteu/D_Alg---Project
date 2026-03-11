@@ -21,6 +21,9 @@ class Vertex:
         self.y = y
         self.Edges = []
         self.DijkstraDistance = 0.0
+        self.is_in_MSP = False
+        self.DijktraVisit = False
+
     def __lt__(self, other):
         return self.x < other.x
 
@@ -36,7 +39,23 @@ class Edge:
         self.Saved=False
     def __lt__(self, other):
         return self.Length < other.Length
+    
+    def visited(self):
+        self.Saved = True
 
+    def is_visited(self):
+        return self.Saved == True
+
+# EDGE =========================================================================
+
+class Edge:
+    def __init__(self,name,length,origin,destination):
+        self.Name = name
+        self.Length = length
+        self.Origin = origin
+        self.Destination = destination
+        self.ReverseEdge = []
+        self.Saved=False
 
 # GRAPH =======================================================================
 
@@ -44,7 +63,28 @@ class Graph:
     def __init__(self):
         self.Vertices = []
         self.Edges = []
+        self.Edge_dict = {}
 
+    def set_Edge_dict(self):
+        for edge in self.Edges:
+            if edge.Origin not in self.Edge_dict:
+                self.Edge_dict[edge.Origin] = {}
+            self.Edge_dict[edge.Origin][edge.Destination] = edge
+
+    def set_Dijkstra_Distance(self, start):
+        for node in self.Vertices:
+            if node == start:
+                node.DijkstraDistance = 0
+            else:
+                node.DijkstraDistance = sys.float_info.max
+
+    def set_Dijkstra_Visit(self):
+        for node in self.Vertices:
+            node.DijktraVisit = False
+                
+    def get_Edges(self, node):
+        return self.Edge_dict[node].items()
+        
     def NewVertex(self, name, x, y):
         v=Vertex(name, x, y)
         self.Vertices.append(v)
@@ -54,6 +94,9 @@ class Graph:
         for v in self.Vertices:
             if v.Name==name: return v
         else: raise Exception('el vertex ', name,' no existeix')
+
+    def GetVertexIndex(self,index):
+        return self.Vertices[index]
 
     def FindVertex(self,name,notFound):
         for v in self.Vertices:
