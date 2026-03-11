@@ -1,4 +1,3 @@
-import graph
 import math
 import sys
 import queue
@@ -10,7 +9,8 @@ def Dijkstra(g,start):
 
 # DijkstraQueue ================================================================
 
-def DijkstraQueue(g: graph.Graph ,start : graph.Vertex):
+
+def DijkstraQueue(g ,start):
 	g.set_Edge_dict()
 	g.set_Dijkstra_Distance(start)
 	g.set_Dijkstra_Visit()
@@ -28,4 +28,3 @@ def DijkstraQueue(g: graph.Graph ,start : graph.Vertex):
 					if acumulada + edge.Length < destination.DijkstraDistance:
 						destination.DijkstraDistance = acumulada + edge.Length
 	return None
-
