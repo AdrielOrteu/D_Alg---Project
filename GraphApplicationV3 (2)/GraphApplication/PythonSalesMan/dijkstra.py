@@ -1,3 +1,4 @@
+import graph
 import math
 import sys
 import queue
@@ -27,4 +28,3 @@ def DijkstraQueue(g ,start ):
 					if acumulada + edge.Length < destination.DijkstraDistance:
 						destination.DijkstraDistance = acumulada + edge.Length
 	return None
-

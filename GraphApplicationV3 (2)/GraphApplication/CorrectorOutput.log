@@ -1,0 +1,17 @@
+RUN (60.000000): "C:\CorrectionServer\CorrectorsDA\GraphCorrector.exe"  KRUSKAL PYTHON GENERAR_TIEMPOS PythonSalesMan\main.py
+EJECUTAR CORRECTOR ADA EN DIRECTORIOC:\CorrectionServer\Courses\DA\CORRECTOR SPANNING_TREE_KRUSKAL
+argv[4]=PythonSalesMan\main.py
+PythonSalesMan\main.py
+EJECUTAR (5): Python PythonSalesMan\main.py Authors
+RUN (5.000000): Python PythonSalesMan\main.py Authors
+['PythonSalesMan\\main.py', 'Authors'] 2
+Nom Alumne 1.....: nombre del alumno 1
+Cognoms Alumne 1.: apellidos del alumno 1
+NIU Alumne 1.....: 1420805
+
+
+TOTAL TIME=0.039664
+FIN EJECUCION
+Corrector KRUSKAL no definido
+
+TOTAL TIME=0.049116
