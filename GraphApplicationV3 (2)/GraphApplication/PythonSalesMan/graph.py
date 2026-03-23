@@ -51,9 +51,8 @@ class Graph:
         self.Edge_dict = {}
 
     def set_Edge_dict(self):
+        self.Edge_dict = {vertex : {} for vertex in self.Vertices}
         for edge in self.Edges:
-            if edge.Origin not in self.Edge_dict:
-                self.Edge_dict[edge.Origin] = {}
             self.Edge_dict[edge.Origin][edge.Destination] = edge
 
     def set_Dijkstra_Distance(self, start):
