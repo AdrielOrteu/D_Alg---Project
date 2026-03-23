@@ -17,14 +17,15 @@ def DijkstraQueue(g ,start ):
 	cua_distancias = queue.PriorityQueue()
 	cua_distancias.put((start, 0))
 	acumulada = 0
-	while cua_distancias:
+	while cua_distancias.empty() == False:
 		actual = cua_distancias.get()
-		if actual[0].DijktraVisit == False:
-			actual[0].DijktraVisit
-			acumulada += actual[1]
-			for destination, edge in g.get_Edges(actual):
-				if destination.DijkstraVisit == False:
-					cua_distancias.put(edge.Origin, edge.Length)
+		if actual[0].DijktraVisit == True:
+			continue
+		actual[0].DijktraVisit = True
+		acumulada += actual[1]
+		for destination, edge in g.get_Edges(actual[0]):
+				if destination.DijktraVisit == False:
+					cua_distancias.put((destination, edge.Length))
 					if acumulada + edge.Length < destination.DijkstraDistance:
 						destination.DijkstraDistance = acumulada + edge.Length
 	return None
