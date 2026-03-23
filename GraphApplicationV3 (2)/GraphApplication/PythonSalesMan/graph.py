@@ -20,7 +20,7 @@ class Vertex:
         self.x = x
         self.y = y
         self.Edges = []
-        self.DijkstraDistance = 0.0
+        self.DijkstraDistance = sys.float_info.max
         self.is_in_MSP = False
         self.DijktraVisit = False
 
