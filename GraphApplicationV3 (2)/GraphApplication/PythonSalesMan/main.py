@@ -11,15 +11,15 @@ import branchAndBound
 # IDENTIFICACIO DELS ALUMNES ===================================================
 # ==============================================================================
 
-graph.NomAlumne1 = "nombre del alumno 1"
-graph.CognomsAlumne1 = "apellidos del alumno 1"
-graph.NIUAlumne1 = ""
+graph.NomAlumne1 = "Adriel"
+graph.CognomsAlumne1 = "Orteu Portocarrero"
+graph.NIUAlumne1 = "1750927"
 
 # No modificar si nomes grup d'un alumne
 
-graph.NomAlumne2 = "nombre del alumno 2"
-graph.CognomsAlumne2 = "apellidos del alumno 2"
-graph.NIUAlumne2 = ""
+graph.NomAlumne2 = "Diogo"
+graph.CognomsAlumne2 = "da Costa lã Cabrita Teixeira"
+graph.NIUAlumne2 = "1751533"
 
 # VERIFICAR ALUMNES =============================================================
 
