@@ -13,7 +13,8 @@ def dijkstra (g, start, Visitas):
         g.set_Dijkstra_Distance(start)
         g.set_Dijkstra_Visit()
         heapq.heappush(cua_prioritat, (0.0, start))
-        while cua_prioritat:
+        fora = 0
+        while cua_prioritat or fora < len(Visitas):
             dist_actual, actual = heapq.heappop(cua_prioritat)
             if actual.DijktraVisit:
                 continue
@@ -31,11 +32,12 @@ def dijkstra (g, start, Visitas):
                         destination.DijkstraDistance = nova_distancia
                         # Afegim a la cua amb heapq
                         heapq.heappush(cua_prioritat, (nova_distancia, destination))
-        max_dist = sys.float_info.max
+
+        min_dist = sys.float_info.max
         next_jump = None
         for node in Visitas:
-             if node.DijkstraDistance < max_dist:
-                max_dist = node.DijkstraDistance
+             if node.DijkstraDistance < min_dist:
+                min_dist = node.DijkstraDistance
                 next_jump = node
 
         return next_jump , camino
