@@ -9,10 +9,12 @@ def Dijkstra(g,start):
 
 # DijkstraQueue ================================================================
 
+<<<<<<< HEAD
 def DijkstraQueue(g ,start ):
-	pass
+=======
 
 def DijkstraQueue(g ,start):
+>>>>>>> bc50f9c382ad6fae99b66213170208683b728358
 	g.set_Edge_dict()
 	g.set_Dijkstra_Distance(start)
 	g.set_Dijkstra_Visit()

@@ -1,6 +1,7 @@
 import math
 import sys
 import queue
+import heapq
 
 # Dijkstra =====================================================================
 
@@ -37,22 +38,24 @@ def Dijkstra(g,start):
 
 def DijkstraQueue(g ,start ):
 	g.set_Edge_dict()
-	g.set_Dijkstra_Distance(start)
+	if g.Vertices == [] or start == None:
+		return None
 	g.set_Dijkstra_Visit()
+	g.set_Dijkstra_Distance(start)
 	cua_distancias = queue.PriorityQueue()
-	cua_distancias.put((start, 0))
-	acumulada = 0
+	cua_distancias.put((0.0, start))
+	acumulada = 0.0
 	while cua_distancias.empty() == False:
-		actual = cua_distancias.get()
-		if actual[0].DijktraVisit == True:
+		dist , actual = cua_distancias.get()
+		if actual.DijktraVisit == True:
 			continue
-		actual[0].DijktraVisit = True
-		acumulada += actual[1]
-		for destination, edge in g.get_Edges(actual[0]):
+		actual.DijktraVisit = True
+		for destination, edge in g.get_Edges(actual):
 				if destination.DijktraVisit == False:
-					cua_distancias.put((destination, edge.Length))
-					if acumulada + edge.Length < destination.DijkstraDistance:
-						destination.DijkstraDistance = acumulada + edge.Length
+					acumulada = dist + edge.Length
+					if acumulada < destination.DijkstraDistance:
+						destination.DijkstraDistance = acumulada
+						cua_distancias.put((acumulada, destination))
 	return None
 
 if __name__ == "__main__":
