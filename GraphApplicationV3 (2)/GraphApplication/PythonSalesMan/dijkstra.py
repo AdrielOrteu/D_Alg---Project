@@ -16,6 +16,9 @@ def min_dist(dist, visitat):
 	return r
 
 def Dijkstra(g,start):
+	if g.Vertices == [] or start == None:
+		return None
+	
 	g.set_Dijkstra_Distance(start)
 	dist = {node:math.inf for node in g.Vertices}
 	visitat = {}
@@ -26,7 +29,7 @@ def Dijkstra(g,start):
 	for _ in range(len(g.Vertices)-1):
 		neighbour_act = min_dist(dist, visitat)
 		visitat[neighbour_act] = True
-		for node2, edge in g.Edge_dict[neighbour_act].items():
+		for node2, edge in g.get_Edges(neighbour_act):
 			if node2 not in visitat:
 				if dist[neighbour_act] + edge.Length < dist[node2]:
 					dist[node2] = dist[neighbour_act] + edge.Length
@@ -81,7 +84,8 @@ if __name__ == "__main__":
 		          list(filter(lambda x: x.Name == e[3], g.Vertices))[0])
 	g.SetDistancesToEdgeLength()
 	start = g.FindVertex("Start", g.Vertices[0])
+	g.Edge_dict = {v1:{e.Destination:e for e in g.Edges if e.Origin == v1} for v1 in g.Vertices}
 	
 	Dijkstra(g, start)
-	DijkstraQueue(g, start)
+	#DijkstraQueue(g, start)
 	print(g)
