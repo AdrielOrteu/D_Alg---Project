@@ -37,11 +37,11 @@ if isCorrection == False:
 	# ==============================================================================
 
 	g=graph.Graph()                     					# crear un graf
-	g.Load("TestDijkstra/Graf10.GR")     					# llegir el graf
+	g.Load("TestDijkstra/Desconectat.GR")     					# llegir el graf
 	g.SetDistancesToEdgeLength()        					# Posar les longituts de les arestes a la distancia entre vertexs
 	start=g.GetVertex("Start");         					# Obtenir el vertex origien de les distancies (distancia 0)
 	t0 = time.time()                    					# temps inicial
-	dijkstra.DijkstraQueue(g,start)          					# Calcular les distancies
+	dijkstra.Dijkstra(g,start)          					# Calcular les distancies
 	t1 = time.time()                    					# Temps final
 	print("temps: ",t1-t0)              					# imprimir el temps d'execució
 	g.DisplayDistances()                					# Visualitza el graf i les distancies
