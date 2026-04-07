@@ -1,7 +1,8 @@
-import graph
 import math
+import graph
 import sys
 import queue
+import copy
 import heapq
 from tracemalloc import start
 
@@ -14,7 +15,7 @@ def dijkstra (g, start, Visitas):
         g.set_Dijkstra_Visit()
         heapq.heappush(cua_prioritat, (0.0, start))
         fora = 0
-        while cua_prioritat or fora < len(Visitas):
+        while cua_prioritat:
             dist_actual, actual = heapq.heappop(cua_prioritat)
             if actual.DijktraVisit:
                 continue
@@ -31,26 +32,36 @@ def dijkstra (g, start, Visitas):
                         destination.DijkstraDistance = nova_distancia
                         # Afegim a la cua amb heapq
                         heapq.heappush(cua_prioritat, (nova_distancia, destination))
-
+                        destination.WhereFrom = edge
         min_dist = sys.float_info.max
         next_jump = None
         for node in Visitas:
-             if node.DijkstraDistance < min_dist:
+            if node.DijkstraDistance < min_dist:
                 min_dist = node.DijkstraDistance
                 next_jump = node
-                camino = g.get_Edge_from_dict(start, node)
-        return next_jump , camino
+        
+        while next_jump != start:
+            edge = next_jump.WhereFrom
+            camino.append(edge)
+            next_jump = edge.Origin
+        camino.reverse()
+
+        return camino[-1].Destination , camino
     
 def SalesmanTrackGreedy(g,visits):
-        if not g.Vertices or visits is None or  visits.Vertices == []:
-            return None
         track = graph.Track(g)
-        next_jump = visits.Vertices[0]
-        visitas = visits.Vertices[1:-2]
-        while len(visits.Vertices) > 1: 
+        if not g.Vertices or visits is None or  visits.Vertices == []:
+            return track
+        actual = visits.Vertices[0]
+        visitas = visits.Vertices[1:-1]
+        n_final = visits.Vertices[-1]
+        while len(visitas) > 0:
+            next_jump, camino = dijkstra(g, actual, visitas)
             visitas.remove(next_jump)
-            track.AddVertex(next_jump)
-            if next_jump != visits.Vertices[-1]:
-                next_jump, camino = dijkstra(g, next_jump, visitas)
-        track.AddLastVertex(camino)
+            for edge in camino:
+                track.AddLast(edge)
+            actual = next_jump
+        _, camino = dijkstra(g, actual, [n_final])
+        for edge in camino:
+            track.AddLast(edge)
         return track

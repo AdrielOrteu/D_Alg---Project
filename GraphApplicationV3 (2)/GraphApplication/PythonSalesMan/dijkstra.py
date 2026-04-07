@@ -16,7 +16,6 @@ def min_dist(dist, visitat):
 	return r
 
 def Dijkstra(g,start):
-	g.set_Edge_dict()
 	g.set_Dijkstra_Distance(start)
 	dist = {node:math.inf for node in g.Vertices}
 	visitat = {}
@@ -37,7 +36,6 @@ def Dijkstra(g,start):
 # DijkstraQueue ================================================================
 
 def DijkstraQueue(g ,start ):
-	g.set_Edge_dict()
 	if g.Vertices == [] or start == None:
 		return None
 	g.set_Dijkstra_Visit()

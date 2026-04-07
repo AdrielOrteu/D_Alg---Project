@@ -23,6 +23,7 @@ class Vertex:
         self.DijkstraDistance = sys.float_info.max
         self.is_in_MSP = False
         self.DijktraVisit = False
+        self.WhereFrom = None
 
     def __lt__(self, other):
         return self.x < other.x
