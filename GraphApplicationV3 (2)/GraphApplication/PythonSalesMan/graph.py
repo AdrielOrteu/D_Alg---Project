@@ -50,11 +50,6 @@ class Graph:
         self.Edges = []
         self.Edge_dict = {}
 
-    def set_Edge_dict(self):
-        self.Edge_dict = {vertex : {} for vertex in self.Vertices}
-        for edge in self.Edges:
-            self.Edge_dict[edge.Origin][edge.Destination] = edge
-
     def set_Dijkstra_Distance(self, start):
         for node in self.Vertices:
             if node == start:
@@ -68,6 +63,9 @@ class Graph:
 
     def get_Edges(self, node):
         return self.Edge_dict[node].items()
+    
+    def get_Edge_from_dict(self, origin, destination):
+        return self.Edge_dict[origin][destination]
 
     def NewVertex(self, name, x, y):
         v=Vertex(name, x, y)
@@ -124,6 +122,8 @@ class Graph:
         while l!='EDGES\n':
             l=l.split()
             v=self.NewVertex(l[0],float(l[1]),float(l[2]))
+            if v not in self.Edge_dict:
+                self.Edge_dict[v] = {}
             l = f.readline()
         l = f.readline()
         while l!='':
@@ -131,6 +131,8 @@ class Graph:
             v1=self.GetVertex(l[2])
             v2=self.GetVertex(l[3])
             e = self.NewEdge(l[0], float(l[1]), v1, v2)
+            self.Edge_dict[v1][v2] = e
+            self.Edge_dict[v2][v1] = e.ReverseEdge
             l = f.readline()
         f.close()
 

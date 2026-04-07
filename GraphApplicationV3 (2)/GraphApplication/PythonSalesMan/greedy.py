@@ -18,7 +18,6 @@ def dijkstra (g, start, Visitas):
             dist_actual, actual = heapq.heappop(cua_prioritat)
             if actual.DijktraVisit:
                 continue
-            
             actual.DijktraVisit = True
             if actual in Visitas:
                 fora += 1
@@ -39,18 +38,19 @@ def dijkstra (g, start, Visitas):
              if node.DijkstraDistance < min_dist:
                 min_dist = node.DijkstraDistance
                 next_jump = node
-
+                camino = g.get_Edge_from_dict(start, node)
         return next_jump , camino
     
 def SalesmanTrackGreedy(g,visits):
-        if not g.Vertices or visits is None:
+        if not g.Vertices or visits is None or  visits.Vertices == []:
             return None
-        g.set_Edge_dict()
-        next_jump = visits[0]
-        camino_total = []
-        while visits:
-            visits.remove(next_jump)
-            next_jump, camino = dijkstra(g, visits[0], visits)
-            camino_total.extend(camino)
-
-        return graph.Track(g)
+        track = graph.Track(g)
+        next_jump = visits.Vertices[0]
+        visitas = visits.Vertices[1:-2]
+        while len(visits.Vertices) > 1: 
+            visitas.remove(next_jump)
+            track.AddVertex(next_jump)
+            if next_jump != visits.Vertices[-1]:
+                next_jump, camino = dijkstra(g, next_jump, visitas)
+        track.AddLastVertex(camino)
+        return track
