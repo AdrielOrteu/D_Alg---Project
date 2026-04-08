@@ -47,15 +47,15 @@ if isCorrection == False:
 	g.DisplayDistances()                					# Visualitza el graf i les distancies
 
 	g=graph.Graph()                     					# crear un graf
-	g.Load("TestSalesMan/RepeatVertex.GR")  				# llegir el graf
+	g.Load("TestSalesMan/Graf10_20_3.GR")  				# llegir el graf
 	g.SetDistancesToEdgeLength()        					# Posar les longituts de les arestes a la distancia entre vertexs
 	vis=graph.Visits(g);									# Crear visites
-	vis.Load("TestSalesMan/RepeatVertex.VIS")				# Llegir les vistes
+	vis.Load("TestSalesMan/Graf10_20_3.VIS")				# Llegir les vistes
 	t0 = time.time()                    					# temps inicial
 
 	#Cerca cami que pasi per les visites
-	trk=greedy.SalesmanTrackGreedy(g,vis)                       #test greedy   
-	#trk=backtracking.SalesmanTrackBacktracking(g,vis)          #test backtracking
+	#trk=greedy.SalesmanTrackGreedy(g,vis)                       #test greedy   
+	trk=backtracking.SalesmanTrackBacktracking(g,vis)          #test backtracking
 	#trk=backtracking.SalesmanTrackBacktrackingGreedy(g,vis)    #test backtracking-greedy
 	#trk=branchAndBound.SalesmanTrackBranchAndBound2(g,vis)     #test branch&bound
 
