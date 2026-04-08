@@ -66,22 +66,22 @@ if __name__ == "__main__":
 		("V0003", 444.823, 335.15),
 		("V0004", -6.13079, 284.741)
 	]
-	edges = [
-		("E0001", 0, "Start", "V0004"),
-		("E0003", 0, "V0004", "V0002"),
-		("E0005", 0, "Start", "V0003"),
-		("E0007", 0, "V0002", "V0003"),
-		("E0009", 0, "Start", "V0002")
-	]
+	#edges = [
+	#	("E0001", 0, "Start", "V0004"),
+	#	("E0003", 0, "V0004", "V0002"),
+	#	("E0005", 0, "Start", "V0003"),
+	#	("E0007", 0, "V0002", "V0003"),
+	#	("E0009", 0, "Start", "V0002")
+	#]
 	
 	from graph import Graph
 	g = Graph()
 	for v in vertices:
 		g.NewVertex(v[0], v[1], v[2])
-	for e in edges:
-		g.NewEdge(e[0], e[1],
-		          list(filter(lambda x: x.Name == e[2], g.Vertices))[0],
-		          list(filter(lambda x: x.Name == e[3], g.Vertices))[0])
+	#for e in edges:
+	#	g.NewEdge(e[0], e[1],
+	#	          list(filter(lambda x: x.Name == e[2], g.Vertices))[0],
+	#	          list(filter(lambda x: x.Name == e[3], g.Vertices))[0])
 	g.SetDistancesToEdgeLength()
 	start = g.FindVertex("Start", g.Vertices[0])
 	g.Edge_dict = {v1:{e.Destination:e for e in g.Edges if e.Origin == v1} for v1 in g.Vertices}

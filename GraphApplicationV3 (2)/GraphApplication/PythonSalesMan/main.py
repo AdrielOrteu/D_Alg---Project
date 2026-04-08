@@ -37,7 +37,7 @@ if isCorrection == False:
 	# ==============================================================================
 
 	g=graph.Graph()                     					# crear un graf
-	g.Load("TestDijkstra/Graf10.GR")     					# llegir el graf
+	g.Load("TestDijkstra/Desconectat.GR")     					# llegir el graf
 	g.SetDistancesToEdgeLength()        					# Posar les longituts de les arestes a la distancia entre vertexs
 	start=g.GetVertex("Start");         					# Obtenir el vertex origien de les distancies (distancia 0)
 	t0 = time.time()                    					# temps inicial
