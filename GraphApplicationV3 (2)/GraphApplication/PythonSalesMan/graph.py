@@ -63,7 +63,12 @@ class Graph:
             node.DijktraVisit = False
 
     def get_Edges(self, node):
+<<<<<<< HEAD
+        if node == None:
+            return []
+=======
         if node is None: return []
+>>>>>>> 3cc348aa4f491a3d1bf99bb5c10821257e873848
         return self.Edge_dict[node].items()
     
     def get_Edge_from_dict(self, origin, destination):
