@@ -56,6 +56,7 @@ def DijkstraQueue(g ,start ):
 					acumulada = dist + edge.Length
 					if acumulada < destination.DijkstraDistance:
 						destination.DijkstraDistance = acumulada
+						destination.WhereFrom = edge
 						cua_distancias.put((acumulada, destination))
 	return None
 
