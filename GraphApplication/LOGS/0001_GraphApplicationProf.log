@@ -1,0 +1,56 @@
+11/03/2026 10:20:21: Open executable: C:\Users\adrie\PycharmProjects\2onDades\D_Alg---Project\GraphApplication\GraphApplicationProf.exe
+11/03/2026 10:20:21: Command line: GraphApplicationProf.exe display Display.gr Display.trk Display.vis
+11/03/2026 10:20:21: Nom Alumne 1: nombre del alumno 1
+11/03/2026 10:20:21: Cognoms Alumne : apellidos del alumno 1
+11/03/2026 10:20:21: NIU Alumne 1: 1000000
+11/03/2026 10:20:21: Nom Alumne 2: nombre del alumno 2
+11/03/2026 10:20:21: Cognoms Alumne 2: apellidos del alumno 2
+11/03/2026 10:20:21: NIU Alumne 2: 
+11/03/2026 10:20:21: Display Display.gr Display.gr Display.gr
+11/03/2026 10:21:00: OnBnClickedButtonTrobaCami2
+11/03/2026 10:21:00: ERROR: CGraph::GetVertex: no se ha encontrado un vértice del grafo con nombre: INICI
+11/03/2026 10:21:01: OnBnClickedButtonTrobaCami3
+11/03/2026 10:21:01: ERROR: CGraph::GetVertex: no se ha encontrado un vértice del grafo con nombre: INICI
+11/03/2026 10:21:02: OnBnClickedButtonTrobaCami1
+11/03/2026 10:21:02: ERROR: CGraph::GetVertex: no se ha encontrado un vértice del grafo con nombre: INICI
+11/03/2026 10:21:08: OnBnClickedButtonPrim
+11/03/2026 10:21:08: Run time: 0.000030
+11/03/2026 10:21:09: OnBnClickedButtonKruskal
+11/03/2026 10:21:09: Run time: 0.000032
+11/03/2026 10:21:10: OnBnClickedButtonPrim
+11/03/2026 10:21:10: Run time: 0.000015
+11/03/2026 10:21:11: OnBnClickedButtonQuickHull
+11/03/2026 10:21:11: Run time: 0.000022
+11/03/2026 10:21:13: OnBnClickedButtonKruskal
+11/03/2026 10:21:13: Run time: 0.000023
+11/03/2026 10:21:14: OnBnClickedButtonPrim
+11/03/2026 10:21:14: Run time: 0.000013
+11/03/2026 10:21:15: OnBnClickedButtonBranchBound2
+11/03/2026 10:21:15: Run time: 0.000624
+11/03/2026 10:21:17: OnBnClickedButtonBranchBound3
+11/03/2026 10:21:17: Run time: 0.000132
+11/03/2026 10:21:17: OnBnClickedButtonProbabilistic
+11/03/2026 10:21:17: Run time: 0.051537
+11/03/2026 10:21:19: OnBnClickedButtonBranchBound3
+11/03/2026 10:21:19: Run time: 0.000137
+11/03/2026 10:21:19: OnBnClickedButtonProbabilistic
+11/03/2026 10:21:19: Run time: 0.051990
+11/03/2026 10:21:20: OnBnClickedButtonBranchBound3
+11/03/2026 10:21:20: Run time: 0.000143
+11/03/2026 10:21:20: OnBnClickedButtonProbabilistic
+11/03/2026 10:21:20: Run time: 0.058916
+11/03/2026 10:21:21: OnBnClickedButtonBranchBound3
+11/03/2026 10:21:21: Run time: 0.000212
+11/03/2026 10:21:21: OnBnClickedButtonProbabilistic
+11/03/2026 10:21:21: Run time: 0.048518
+11/03/2026 10:21:22: OnBnClickedButtonBranchBound2
+11/03/2026 10:21:22: Run time: 0.000876
+11/03/2026 10:21:22: OnBnClickedButtonBranchBound1
+11/03/2026 10:21:22: Run time: 0.000324
+11/03/2026 10:21:23: OnBnClickedButtonGreedy
+11/03/2026 10:21:23: Run time: 0.000025
+11/03/2026 10:21:23: OnBnClickedButtonBacktracking
+11/03/2026 10:21:23: Run time: 0.000374
+11/03/2026 10:21:24: OnBnClickedButtonBacktrackingGreedy
+11/03/2026 10:21:24: Run time: 0.000137
+11/03/2026 10:21:27: Close executable: C:\Users\adrie\PycharmProjects\2onDades\D_Alg---Project\GraphApplication\GraphApplicationProf.exe
