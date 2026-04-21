@@ -3,7 +3,7 @@ import subprocess
 import sys
 import time
 import dijkstra
-import greedy
+#import greedy
 import backtracking
 import branchAndBound
 
@@ -55,7 +55,7 @@ if isCorrection == False:
 
 	#Cerca cami que pasi per les visites
 	#trk=greedy.SalesmanTrackGreedy(g,vis)                       #test greedy   
-	trk=backtracking.SalesmanTrackBacktracking(g,vis)          #test backtracking
+	trk=backtracking.SalesmanTrackBacktrackingGreedy(g,vis)          #test backtracking
 	#trk=backtracking.SalesmanTrackBacktrackingGreedy(g,vis)    #test backtracking-greedy
 	#trk=branchAndBound.SalesmanTrackBranchAndBound2(g,vis)     #test branch&bound
 
