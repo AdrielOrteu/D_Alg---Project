@@ -216,6 +216,7 @@ class Track:
     def __init__(self,g):
         self.Graph=g
         self.Edges=[]
+        self.Vertices=set()
 
     def AddFirst(self,edge):
         self.Edges.insert(0,edge)
