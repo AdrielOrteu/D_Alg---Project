@@ -49,7 +49,7 @@ class Graph:
     def __init__(self):
         self.Vertices = []
         self.Edges = []
-        self.Edge_dict = {}
+        self.Edge_dict: dict[Vertex, dict[Vertex, Edge]] = {}
 
     def set_Dijkstra_Distance(self, start):
         for node in self.Vertices:
@@ -63,6 +63,8 @@ class Graph:
             node.DijktraVisit = False
 
     def get_Edges(self, node):
+        if node == None:
+            return []
         if node is None: return []
         return self.Edge_dict[node].items()
     
@@ -216,19 +218,23 @@ class Track:
     def __init__(self,g):
         self.Graph=g
         self.Edges=[]
-        self.Vertices=set()
+        self.Length = 0
 
     def AddFirst(self,edge):
         self.Edges.insert(0,edge)
+        self.Length += edge.Length
 
     def AddLast(self,edge):
         self.Edges.append(edge)
+        self.Length += edge.Length
 
     def Append(self,trk):
         self.Edges.extend(trk.Edges)
+        self.Length = trk.Length
 
     def AppendBefore(self,trk):
         self.Edges[0:0]=trk.Edges
+        self.Length = trk.Length
 
     def Load(self,filename):
         f=open(filename,'r')

@@ -3,29 +3,45 @@ import math
 import sys
 import queue
 import dijkstra
-from copy import deepcopy
+
+
 
 def SalesmanTrackBacktracking(g,visits):
     track = graph.Track(g)
-    track.Vertices.add(visits[0])
+    
+    recc_backtracking_salesman(g=g,
+                               track=track,
+                               destinations=set(visits[1:-1]),
+                               final_destination=visits[-1],
+                               seen=set(),
+                               best_len=math.inf,
+                               position=visits[0])
     return track
 
-# CHANGE TO COMMIT
-def recc_backtracking_salesman(g, track: graph.Track, destinations):
+def recc_backtracking_salesman(g: graph.Graph, track: graph.Track, destinations: set, final_destination: graph.Vertex, seen: set, best_len: float, position=None):
     paths = []
-    
-    for v in g.get_Edges(track.Edges[-1].Destination):
-        tmp_track = deepcopy(track)
+    best_track = track
+    if position is None: position = track.Edges[-1].Destination
+    for v, e in g.Edge_dict[position].items():
+        if v in seen: continue
+        if track.Length + e.Length >= best_len: continue
+        
+        n_track = graph.Track(g)
+        paths.append(n_track)
+        n_track.AddLast(e)
+        if v is final_destination and destinations == set():
+            track.Append(n_track)
+            return track.Length
         if v in destinations:
-            tmp_track.Vertices.add(v)
-            return
-        elif v in track.Vertices:
-            continue
-        
-        
+            destinations.remove(v)
+            seen.clear()
+        tmp_len = recc_backtracking_salesman(g, track, destinations, final_destination, seen) #TODO: recursion
+        if tmp_len < best_len:
+            best_len = tmp_len
+            best_track = n_track
     
-    best_path = min(paths, key=lambda x: x[1])
-    return best_path
+    track.Append(best_track)
+    return best_len
 
 # ==============================================================================
 
@@ -33,7 +49,7 @@ def SalesmanTrackBacktrackingGreedy(g, visits):
     track = graph.Track(g)
     if not g.Vertices or visits is None or  visits.Vertices == []:
         return track
-    best_cami = SalesmanBackGreedyRec(visits.Vertices[0], visits.Vertices[1:-1], g, visits.Vertices[-1])
+    best_cami = SalesmanBackGreedyRec(visits.Vertices[0], visits.Vertices[1:], 0, g, visits.Vertices[-1])
     for e in best_cami:
         track.add_Edge(e)
     return graph.Track(g)
@@ -48,23 +64,13 @@ def reconstrueix_cami(start, node):
     return cami
 
 def SalesmanBackGreedyRec(node_actual, visitas, graph, final):
-    best_cost = sys.float_info.max
-    best_cami = []
+    best_cost = math.inf
     dijkstra.DijkstraQueue(graph, node_actual)
     if visitas == []:
-        cami = reconstrueix_cami(node_actual, final)
-        cost_actual = final.DijkstraDistance
-        return cami, cost_actual
+        return []
     for node in visitas:
         visitas.remove(node)
         cami, cost = SalesmanBackGreedyRec(node, visitas, graph, final)
         visitas.append(node)
-        cost = cost + node.DijkstraDistance
-        if cost < best_cost:
-            best_node = node
-            best_cost = cost
-            best_cami = cami
-    best_cami = reconstrueix_cami(node_actual, best_node) + best_cami
-    return best_cost, best_cami
 
 
