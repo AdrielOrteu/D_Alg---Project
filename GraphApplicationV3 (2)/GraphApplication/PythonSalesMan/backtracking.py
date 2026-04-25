@@ -63,14 +63,20 @@ def reconstrueix_cami(start, node):
     cami.reverse()
     return cami
 
-def SalesmanBackGreedyRec(node_actual, visitas, graph, final):
+def SalesmanBackGreedyRec(node_actual, visitas, cost ,camino ,graph, final):
     best_cost = math.inf
     dijkstra.DijkstraQueue(graph, node_actual)
     if visitas == []:
-        return []
+        return camino + reconstrueix_cami(node_actual, final), cost + final.DijkstraDistance
     for node in visitas:
+        camino = camino + reconstrueix_cami(node_actual, node)
         visitas.remove(node)
-        cami, cost = SalesmanBackGreedyRec(node, visitas, graph, final)
+        cost_actual = cost + node.DijkstraDistance
+        cami, cost = SalesmanBackGreedyRec(node, visitas, cost_actual, camino,  graph, final)
         visitas.append(node)
+        if cost < best_cost:
+            best_cost = cost
+            best_cami = cami
+    return best_cami, best_cost
 
 
