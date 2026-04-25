@@ -18,7 +18,7 @@ def SalesmanTrackBacktracking(g,visits):
                                position=visits[0])
     return track
 
-def recc_backtracking_salesman(g: graph.Graph, track: graph.Track, destinations: set, final_destination: graph.Vertex, seen: set, best_len: float, position=None):
+def recc_backtracking_salesman(g, track, destinations: set, final_destination, seen: set, best_len: float, position=None):
     paths = []
     best_track = track
     if position is None: position = track.Edges[-1].Destination
@@ -49,15 +49,18 @@ def SalesmanTrackBacktrackingGreedy(g, visits):
     track = graph.Track(g)
     if not g.Vertices or visits is None or  visits.Vertices == []:
         return track
-    best_cami = SalesmanBackGreedyRec(visits.Vertices[0], visits.Vertices[1:], 0, g, visits.Vertices[-1])
+    best_cami, best_cost= SalesmanBackGreedyRec(visits.Vertices[0], visits.Vertices[1:-1], 0, [], g, visits.Vertices[-1])
     for e in best_cami:
-        track.add_Edge(e)
-    return graph.Track(g)
+        track.AddLast(e)
+    return track
 
 def reconstrueix_cami(start, node):
     cami = []
     while node != start:
         edge = node.WhereFrom
+        if edge.Origin == node:
+            edge = edge.ReverseEdge
+            node.WhereFrom = edge
         cami.append(edge)
         node = edge.Origin
     cami.reverse()
