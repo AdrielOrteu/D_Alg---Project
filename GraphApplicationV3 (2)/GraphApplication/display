@@ -3,7 +3,7 @@ Cognoms Alumne 1.: apellidos del alumno 1
 NIU Alumne 1.....: 1000000
 NIUSAlumnes.csv readed
 
-NARGS 3
+NARGS 4
 Leer vertices
 Leer Aristas
 Fin lectura
