@@ -9,40 +9,43 @@ import dijkstra
 
 def SalesmanTrackBacktracking(g,visits):
     track = graph.Track(g)
+    start = visits.Vertices[0]
+    final = visits.Vertices[-1]
+    visitas = visits.Vertices[1:-1]
+    visitats = set()
+    visitats.add(start)
+
+
+    cami , cost =backtracking(g, start, final, visitas, visitats, 0, [])
     
-    recc_backtracking_salesman(g=g,
-                               track=track,
-                               destinations=set(visits[1:-1]),
-                               final_destination=visits[-1],
-                               seen=set(),
-                               best_len=math.inf,
-                               position=visits[0])
+    for e in cami:
+        track.AddLast(e)
     return track
 
-def recc_backtracking_salesman(g, track, destinations: set, final_destination, seen: set, best_len: float, position=None):
-    paths = []
-    best_track = track
-    if position is None: position = track.Edges[-1].Destination
-    for v, e in g.Edge_dict[position].items():
-        if v in seen: continue
-        if track.Length + e.Length >= best_len: continue
-        
-        n_track = graph.Track(g)
-        paths.append(n_track)
-        n_track.AddLast(e)
-        if v is final_destination and destinations == set():
-            track.Append(n_track)
-            return track.Length
-        if v in destinations:
-            destinations.remove(v)
-            seen.clear()
-        tmp_len = recc_backtracking_salesman(g, track, destinations, final_destination, seen) #TODO: recursion
-        if tmp_len < best_len:
-            best_len = tmp_len
-            best_track = n_track
-    
-    track.Append(best_track)
-    return best_len
+def backtracking(g, node_actual, final, visitas, visitats, cost_actual, cami_actual):
+    if node_actual == final and visitas == []:
+        return cami_actual , cost_actual
+    best_cami = None
+    best_cost = math.inf
+    for dest, edge in g.get_Edges(node_actual):
+        if dest in visitats:
+            continue
+        path = cami_actual + [edge]
+        new_cost = cost_actual + edge.Length
+        if dest in visitas:
+            visitats_new = set()
+            visitats_new.add(dest)
+            visitas.remove(dest)
+            cami_res, cost_res = backtracking(g, dest, final, visitas, visitats, new_cost, path)
+            visitas.append(dest)
+        else:
+            visitats.add(dest)
+            cami_res, cost_res = backtracking(g, dest, final, visitas, visitats, new_cost, path)
+            visitats.remove(dest)
+        if cami_res is not None and cost_res < best_cost:
+            best_cami = cami_res
+            best_cost = cost_res
+    return best_cami, best_cost
 
 # ==============================================================================
 
