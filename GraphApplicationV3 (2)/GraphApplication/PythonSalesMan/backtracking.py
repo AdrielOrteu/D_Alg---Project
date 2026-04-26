@@ -14,38 +14,43 @@ def SalesmanTrackBacktracking(g,visits):
     visitas = visits.Vertices[1:-1]
     visitats = set()
     visitats.add(start)
+    mejor_cost = [math.inf]
+    mejor_camim = []
 
-
-    cami , cost =backtracking(g, start, final, visitas, visitats, 0, [])
+    cami , cost =backtracking(g, start, final, visitas, visitats, 0, [], mejor_cost, mejor_camim)
     
     for e in cami:
         track.AddLast(e)
     return track
 
-def backtracking(g, node_actual, final, visitas, visitats, cost_actual, cami_actual):
+def backtracking(g, node_actual, final, visitas, visitats, cost_actual, cami_actual, mejor_cost, mejor_cami=None):
+    best_cami = []
     if node_actual == final and visitas == []:
+        if cost_actual < mejor_cost[0]:
+            mejor_cost[0] = cost_actual
+            mejor_cami = cami_actual
+            return cami_actual, cost_actual
         return cami_actual , cost_actual
-    best_cami = None
-    best_cost = math.inf
     for dest, edge in g.get_Edges(node_actual):
         if dest in visitats:
             continue
         path = cami_actual + [edge]
         new_cost = cost_actual + edge.Length
+        if new_cost >= mejor_cost[0]:
+            continue
         if dest in visitas:
             visitats_new = set()
             visitats_new.add(dest)
             visitas.remove(dest)
-            cami_res, cost_res = backtracking(g, dest, final, visitas, visitats_new, new_cost, path)
+            cami_res, cost_res = backtracking(g, dest, final, visitas, visitats_new, new_cost, path, mejor_cost, mejor_cami)
             visitas.append(dest)
         else:
             visitats.add(dest)
-            cami_res, cost_res = backtracking(g, dest, final, visitas, visitats, new_cost, path)
+            cami_res, cost_res = backtracking(g, dest, final, visitas, visitats, new_cost, path, mejor_cost, mejor_cami)
             visitats.remove(dest)
-        if cami_res is not None and cost_res < best_cost:
+        if cami_res != []:
             best_cami = cami_res
-            best_cost = cost_res
-    return best_cami, best_cost
+    return best_cami, mejor_cost[0]
 
 # ==============================================================================
 
