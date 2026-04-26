@@ -36,7 +36,7 @@ def backtracking(g, node_actual, final, visitas, visitats, cost_actual, cami_act
             visitats_new = set()
             visitats_new.add(dest)
             visitas.remove(dest)
-            cami_res, cost_res = backtracking(g, dest, final, visitas, visitats, new_cost, path)
+            cami_res, cost_res = backtracking(g, dest, final, visitas, visitats_new, new_cost, path)
             visitas.append(dest)
         else:
             visitats.add(dest)

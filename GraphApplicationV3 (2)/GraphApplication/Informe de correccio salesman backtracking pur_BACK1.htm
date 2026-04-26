@@ -28,7 +28,7 @@
 </ul>
 </div>
 <div class="derecha">
-<p style="margin-top: 25px;"><span>Data:</span>Sun Apr 26 22:24:35 2026
+<p style="margin-top: 25px;"><span>Data:</span>Sun Apr 26 22:20:15 2026
 </p>
 <p style="margin-top: 25px;"><span>Corrector:</span>SALESMAN_BACKTRACKING_PUR (SALESMAN_BACKTRACKING_PUR)</p>
 <h3>Autors:</h3>
@@ -39,7 +39,7 @@
 </div>
 </div>
 <div class="resultado">
-<p><span>Backtracking pur </span><span id="nota">2.18182</span></p>
+<p><span>Backtracking pur </span><span id="nota">2.90909</span></p>
 <script>
 const notas = document.querySelectorAll("#nota");
 notas.forEach(nota => {
@@ -151,13 +151,13 @@ window.addEventListener('DOMContentLoaded', function () {
 <h3>Llista de proves:</h3>
 <ul>
 <li class="elemento" data-propiedades="correcta  "><span class="tituloLista"><a href="#TEST_1">Prova Salesman Backtracking Simple<span class = "descripcion">:</span></a></span><span class="correcto"> Correcte</span></li>
-<li class="elemento" data-propiedades="correcta  "><span class="tituloLista"><a href="#TEST_2">Prova Salesman Backtracking GreedyNoOptimo<span class = "descripcion">:</span></a></span><span class="correcto"> Correcte</span></li>
+<li class="elemento" data-propiedades="incorrecta  "><span class="tituloLista"><a href="#TEST_2">Prova Salesman Backtracking GreedyNoOptimo<span class = "descripcion">:</span></a></span><span class="incorrecto"> Falla amb 1 errors</span></li>
 <li class="elemento" data-propiedades="incorrecta  "><span class="tituloLista"><a href="#TEST_3">Prova Salesman Backtracking RepeatVertex<span class = "descripcion">:</span></a></span><span class="incorrecto"> Falla amb 1 errors</span></li>
-<li class="elemento" data-propiedades="correcta  "><span class="tituloLista"><a href="#TEST_4">Prova Salesman Backtracking AfterEnd<span class = "descripcion">:</span></a></span><span class="correcto"> Correcte</span></li>
-<li class="elemento" data-propiedades="incorrecta  "><span class="tituloLista"><a href="#TEST_5">Prova Salesman Backtracking Graf10_20_3<span class = "descripcion">:</span></a></span><span class="incorrecto"> Falla amb 1 errors</span></li>
+<li class="elemento" data-propiedades="incorrecta  "><span class="tituloLista"><a href="#TEST_4">Prova Salesman Backtracking AfterEnd<span class = "descripcion">:</span></a></span><span class="incorrecto"> Falla amb 1 errors</span></li>
+<li class="elemento" data-propiedades="correcta  "><span class="tituloLista"><a href="#TEST_5">Prova Salesman Backtracking Graf10_20_3<span class = "descripcion">:</span></a></span><span class="correcto"> Correcte</span></li>
 <li class="elemento" data-propiedades="incorrecta  "><span class="tituloLista"><a href="#TEST_6">Prova Salesman Backtracking Graf10_20_5<span class = "descripcion">:</span></a></span><span class="incorrecto"> Falla amb 1 errors</span></li>
-<li class="elemento" data-propiedades="incorrecta  "><span class="tituloLista"><a href="#TEST_7">Prova Salesman Backtracking Graf10_20_6<span class = "descripcion">:</span></a></span><span class="incorrecto"> Falla amb 1 errors</span></li>
-<li class="elemento" data-propiedades="incorrecta  "><span class="tituloLista"><a href="#TEST_8">Prova Salesman Backtracking Graf10_40_4<span class = "descripcion">:</span></a></span><span class="incorrecto"> Falla amb 1 errors</span></li>
+<li class="elemento" data-propiedades="correcta  "><span class="tituloLista"><a href="#TEST_7">Prova Salesman Backtracking Graf10_20_6<span class = "descripcion">:</span></a></span><span class="correcto"> Correcte</span></li>
+<li class="elemento" data-propiedades="correcta  "><span class="tituloLista"><a href="#TEST_8">Prova Salesman Backtracking Graf10_40_4<span class = "descripcion">:</span></a></span><span class="correcto"> Correcte</span></li>
 <li class="elemento" data-propiedades="incorrecta  "><span class="tituloLista"><a href="#TEST_9">Prova Salesman Backtracking graf20_100_4<span class = "descripcion">:</span></a></span><span class="incorrecto"> Falla amb 1 errors</span></li>
 <li class="elemento" data-propiedades="incorrecta  "><span class="tituloLista"><a href="#TEST_10">Prova Salesman Backtracking Graf50_200_6<span class = "descripcion">:</span></a></span><span class="incorrecto"> Falla amb 1 errors</span></li>
 <li class="elemento" data-propiedades="incorrecta  "><span class="tituloLista"><a href="#TEST_11">Prova Salesman Backtracking Graf50_200_7C<span class = "descripcion">:</span></a></span><span class="incorrecto"> Falla amb 1 errors</span></li>
@@ -199,7 +199,7 @@ Temps d'execució de la prova: 0seg.</P>
 
  <b>CORRECTE</b>
 </div>
-<div class="test elemento" data-propiedades="correcta ">
+<div class="test elemento" data-propiedades="incorrecta ">
 <hr>
 <a name="TEST_2">
 <h3>Prova Salesman Backtracking GreedyNoOptimo</h3>
@@ -211,10 +211,15 @@ Fitxer amb el cami correcte: "TestSalesMan\\GreedyNoOptimo.TRK"</p>
 Temps d'execució máxim: 0.00316seg.<br>
 Temps d'execució de la prova: 0seg.</P>
 <P><b>CAMI OK:</b> [V0001 &mdash;E0017&rarr; V0001 // V0006 &mdash;E0017$Reverse&rarr; V0001 &mdash;E0019&rarr; V0001 // V0002 &mdash;E0021&rarr; V0001 // V0003 &mdash;E0023&rarr; V0001 // V0004 &mdash;E0013&rarr; V0001 // V0009 &mdash;E0015&rarr; V0005]</P>
-<P><b>CAMI PRACTICA:</b> [V0001 &mdash;E0017&rarr; V0001 // V0006 &mdash;E0017$Reverse&rarr; V0001 &mdash;E0019&rarr; V0001 // V0002 &mdash;E0021&rarr; V0001 // V0003 &mdash;E0023&rarr; V0001 // V0004 &mdash;E0013&rarr; V0001 // V0009 &mdash;E0015&rarr; V0005]</P>
+<P><b>CAMI PRACTICA:</b> [V0001 &mdash;E0017&rarr; V0001 // V0006 &mdash;E0027&rarr; V0001 // V0004 &mdash;E0023$Reverse&rarr; V0001 // V0003 &mdash;E0021$Reverse&rarr; V0001 // V0002 &mdash;E0021&rarr; V0001 // V0003 &mdash;E0009&rarr; V0001 // V0008 &mdash;E0025&rarr; V0001 // V0009 &mdash;E0015&rarr; V0005]</P>
 
- <b>CORRECTE</b>
-</div>
+<b style="color: red; ">Falla amb 1 errors</b>
+<ul>
+<li>Camí massa llarg
+<dd>
+Camí masa llarg ( longitud correcte 1404.15, longitud camin pràctica 1852.97)
+</dd>
+</ul><br></div>
 <div class="test elemento" data-propiedades="incorrecta ">
 <hr>
 <a name="TEST_3">
@@ -225,21 +230,17 @@ Fitxer amb les visites: "TestSalesMan\\RepeatVertex.VIS"</p>
 Fitxer amb el cami correcte: "TestSalesMan\\RepeatVertex.TRK"</p>
 <p> Temps de referència: 0.00173seg.<br>
 Temps d'execució máxim: 0.00692seg.<br>
-Temps d'execució de la prova: 0.0316761seg.</P>
-<P><b>CAMI OK:</b> [V0001 &mdash;E0001&rarr; V0001 // V0002 &mdash;E0003&rarr; V0001 // V0003 &mdash;E0009&rarr; V0001 // V0011 &mdash;E0013&rarr; V0001 // V0010 &mdash;E0015$Reverse&rarr; V0001 // V0006 &mdash;E0017&rarr; V0001 // V0007 &mdash;E0019&rarr; V0001 // V0008 &mdash;E0021&rarr; V0001 // V0009 &mdash;E0025&rarr; V0001 // V0011 &mdash;E0009$Reverse&rarr; V0001 // V0003 &mdash;E0005&rarr; V0001 // V0004 &mdash;E0007&rarr; V0005]</P>
-<P><b>CAMI PRACTICA:</b> [V0001 &mdash;E0001&rarr; V0001 // V0002 &mdash;E0003&rarr; V0001 // V0003 &mdash;E0009&rarr; V0001 // V0011 &mdash;E0013&rarr; V0001 // V0010 &mdash;E0015$Reverse&rarr; V0001 // V0006 &mdash;E0017&rarr; V0001 // V0007 &mdash;E0019&rarr; V0001 // V0008 &mdash;E0021&rarr; V0001 // V0009 &mdash;E0025&rarr; V0001 // V0011 &mdash;E0009$Reverse&rarr; V0001 // V0003 &mdash;E0005&rarr; V0001 // V0004 &mdash;E0007&rarr; V0005]</P>
 
 <b style="color: red; ">Falla amb 1 errors</b>
 <ul>
-<li>Temps màxim de la prova excedit
+<li>Unhandled Exception
 <dd>
-La prova ha exedit el temps màxim.<BR>
-Temps de ejecució de l'algorisme : 0.0316761 seg.<BR>
-Temps màxim permes per la ejecució de l'algorisme : 0.00692 seg.
+<p> Correction of the test failed due to an unhandled exception.<br>
+ EXCEPTION Exit code 1 on command Python main.py Outputs\RepeatVertex_SalesmanBacktracking_Out.txt backtracking TestSalesMan\RepeatVertex.GR TestSalesMan\RepeatVertex.VIS Outputs\RepeatVertex_SalesmanBacktracking.TRK</p>
 
 </dd>
 </ul><br></div>
-<div class="test elemento" data-propiedades="correcta ">
+<div class="test elemento" data-propiedades="incorrecta ">
 <hr>
 <a name="TEST_4">
 <h3>Prova Salesman Backtracking AfterEnd</h3>
@@ -249,13 +250,17 @@ Fitxer amb les visites: "TestSalesMan\\AfterEnd.VIS"</p>
 Fitxer amb el cami correcte: "TestSalesMan\\AfterEnd.TRK"</p>
 <p> Temps de referència: 0.00035seg.<br>
 Temps d'execució máxim: 0.0014seg.<br>
-Temps d'execució de la prova: 0seg.</P>
-<P><b>CAMI OK:</b> [V0001 &mdash;E0003&rarr; V0001 // V0009 &mdash;E0007&rarr; V0001 // V0008 &mdash;E0009&rarr; V0001 // V0003 &mdash;E0011&rarr; V0001 // V0006 &mdash;E0013&rarr; V0001 // V0007 &mdash;E0015&rarr; V0001 // V0004 &mdash;E0017&rarr; V0001 // V0005 &mdash;E0019&rarr; V0001 // V0003 &mdash;E0009$Reverse&rarr; V0008]</P>
-<P><b>CAMI PRACTICA:</b> [V0001 &mdash;E0003&rarr; V0001 // V0009 &mdash;E0007&rarr; V0001 // V0008 &mdash;E0009&rarr; V0001 // V0003 &mdash;E0011&rarr; V0001 // V0006 &mdash;E0013&rarr; V0001 // V0007 &mdash;E0015&rarr; V0001 // V0004 &mdash;E0017&rarr; V0001 // V0005 &mdash;E0019&rarr; V0001 // V0003 &mdash;E0009$Reverse&rarr; V0008]</P>
 
- <b>CORRECTE</b>
-</div>
-<div class="test elemento" data-propiedades="incorrecta ">
+<b style="color: red; ">Falla amb 1 errors</b>
+<ul>
+<li>Unhandled Exception
+<dd>
+<p> Correction of the test failed due to an unhandled exception.<br>
+ EXCEPTION Exit code 1 on command Python main.py Outputs\AfterEnd_SalesmanBacktracking_Out.txt backtracking TestSalesMan\AfterEnd.GR TestSalesMan\AfterEnd.VIS Outputs\AfterEnd_SalesmanBacktracking.TRK</p>
+
+</dd>
+</ul><br></div>
+<div class="test elemento" data-propiedades="correcta ">
 <hr>
 <a name="TEST_5">
 <h3>Prova Salesman Backtracking Graf10_20_3</h3>
@@ -265,20 +270,12 @@ Fitxer amb les visites: "TestSalesMan\\Graf10_20_3.VIS"</p>
 Fitxer amb el cami correcte: "TestSalesMan\\Graf10_20_3.TRK"</p>
 <p> Temps de referència: 0.00062seg.<br>
 Temps d'execució máxim: 0.00248seg.<br>
-Temps d'execució de la prova: 0.0156689seg.</P>
+Temps d'execució de la prova: 0seg.</P>
 <P><b>CAMI OK:</b> [V0008 &mdash;E0025$Reverse&rarr; V0008 // V0007 &mdash;E0011$Reverse&rarr; V0008 // V0004 &mdash;E0005$Reverse&rarr; V0008 // V0003 &mdash;E0033&rarr; V0006]</P>
 <P><b>CAMI PRACTICA:</b> [V0008 &mdash;E0025$Reverse&rarr; V0008 // V0007 &mdash;E0011$Reverse&rarr; V0008 // V0004 &mdash;E0005$Reverse&rarr; V0008 // V0003 &mdash;E0033&rarr; V0006]</P>
 
-<b style="color: red; ">Falla amb 1 errors</b>
-<ul>
-<li>Temps màxim de la prova excedit
-<dd>
-La prova ha exedit el temps màxim.<BR>
-Temps de ejecució de l'algorisme : 0.0156689 seg.<BR>
-Temps màxim permes per la ejecució de l'algorisme : 0.00248 seg.
-
-</dd>
-</ul><br></div>
+ <b>CORRECTE</b>
+</div>
 <div class="test elemento" data-propiedades="incorrecta ">
 <hr>
 <a name="TEST_6">
@@ -289,17 +286,18 @@ Fitxer amb les visites: "TestSalesMan\\Graf10_20_5.VIS"</p>
 Fitxer amb el cami correcte: "TestSalesMan\\Graf10_20_5.TRK"</p>
 <p> Temps de referència: 0.01146seg.<br>
 Temps d'execució máxim: 0.04584seg.<br>
+Temps d'execució de la prova: 0seg.</P>
+<P><b>CAMI OK:</b> [V0007 &mdash;E0029$Reverse&rarr; V0007 // V0003 &mdash;E0021$Reverse&rarr; V0007 // V0005 &mdash;E0021&rarr; V0007 // V0003 &mdash;E0031&rarr; V0007 // V0006 &mdash;E0013&rarr; V0007 // V0008 &mdash;E0019&rarr; V0002]</P>
+<P><b>CAMI PRACTICA:</b> [V0007 &mdash;E0029$Reverse&rarr; V0007 // V0003 &mdash;E0021$Reverse&rarr; V0007 // V0005 &mdash;E0007$Reverse&rarr; V0007 // V0001 &mdash;E0025$Reverse&rarr; V0007 // V0006 &mdash;E0013&rarr; V0007 // V0008 &mdash;E0019&rarr; V0002]</P>
 
 <b style="color: red; ">Falla amb 1 errors</b>
 <ul>
-<li>Time out
+<li>Camí massa llarg
 <dd>
-<p> Correction of the test failed due to a out of time. Maximum time of 2s. exceded.<br>
- EXCEPTION TIME OUT 2.000000.Kill command: Python main.py Outputs\Graf10_20_5_SalesmanBacktracking_Out.txt backtracking TestSalesMan\Graf10_20_5.GR TestSalesMan\Graf10_20_5.VIS Outputs\Graf10_20_5_SalesmanBacktracking.TRK</p>
-
+Camí masa llarg ( longitud correcte 59549.7, longitud camin pràctica 63695.7)
 </dd>
 </ul><br></div>
-<div class="test elemento" data-propiedades="incorrecta ">
+<div class="test elemento" data-propiedades="correcta ">
 <hr>
 <a name="TEST_7">
 <h3>Prova Salesman Backtracking Graf10_20_6</h3>
@@ -309,17 +307,13 @@ Fitxer amb les visites: "TestSalesMan\\Graf10_20_6.VIS"</p>
 Fitxer amb el cami correcte: "TestSalesMan\\Graf10_20_6.TRK"</p>
 <p> Temps de referència: 0.00977seg.<br>
 Temps d'execució máxim: 0.03908seg.<br>
+Temps d'execució de la prova: 0.0315335seg.</P>
+<P><b>CAMI OK:</b> [V0002 &mdash;E0001$Reverse&rarr; V0002 // V0001 &mdash;E0013&rarr; V0002 // V0008 &mdash;E0017&rarr; V0002 // V0010 &mdash;E0035&rarr; V0002 // V0005 &mdash;E0019&rarr; V0002 // V0003 &mdash;E0023$Reverse&rarr; V0002 // V0004 &mdash;E0011&rarr; V0007]</P>
+<P><b>CAMI PRACTICA:</b> [V0002 &mdash;E0001$Reverse&rarr; V0002 // V0001 &mdash;E0013&rarr; V0002 // V0008 &mdash;E0017&rarr; V0002 // V0010 &mdash;E0035&rarr; V0002 // V0005 &mdash;E0019&rarr; V0002 // V0003 &mdash;E0023$Reverse&rarr; V0002 // V0004 &mdash;E0011&rarr; V0007]</P>
 
-<b style="color: red; ">Falla amb 1 errors</b>
-<ul>
-<li>Time out
-<dd>
-<p> Correction of the test failed due to a out of time. Maximum time of 2s. exceded.<br>
- EXCEPTION TIME OUT 2.000000.Kill command: Python main.py Outputs\Graf10_20_6_SalesmanBacktracking_Out.txt backtracking TestSalesMan\Graf10_20_6.GR TestSalesMan\Graf10_20_6.VIS Outputs\Graf10_20_6_SalesmanBacktracking.TRK</p>
-
-</dd>
-</ul><br></div>
-<div class="test elemento" data-propiedades="incorrecta ">
+ <b>CORRECTE</b>
+</div>
+<div class="test elemento" data-propiedades="correcta ">
 <hr>
 <a name="TEST_8">
 <h3>Prova Salesman Backtracking Graf10_40_4</h3>
@@ -329,20 +323,12 @@ Fitxer amb les visites: "TestSalesMan\\Graf10_40_4.VIS"</p>
 Fitxer amb el cami correcte: "TestSalesMan\\Graf10_40_4.TRK"</p>
 <p> Temps de referència: 0.00065seg.<br>
 Temps d'execució máxim: 0.0026seg.<br>
-Temps d'execució de la prova: 1.61137seg.</P>
+Temps d'execució de la prova: 0seg.</P>
 <P><b>CAMI OK:</b> [V0003 &mdash;E0003$Reverse&rarr; V0003 // V0002 &mdash;E0033$Reverse&rarr; V0003 // V0008 &mdash;E0013$Reverse&rarr; V0003 // V0007 &mdash;E0011$Reverse&rarr; V0003 // V0006 &mdash;E0039$Reverse&rarr; V0001]</P>
 <P><b>CAMI PRACTICA:</b> [V0003 &mdash;E0003$Reverse&rarr; V0003 // V0002 &mdash;E0033$Reverse&rarr; V0003 // V0008 &mdash;E0013$Reverse&rarr; V0003 // V0007 &mdash;E0011$Reverse&rarr; V0003 // V0006 &mdash;E0039$Reverse&rarr; V0001]</P>
 
-<b style="color: red; ">Falla amb 1 errors</b>
-<ul>
-<li>Temps màxim de la prova excedit
-<dd>
-La prova ha exedit el temps màxim.<BR>
-Temps de ejecució de l'algorisme : 1.61137 seg.<BR>
-Temps màxim permes per la ejecució de l'algorisme : 0.0026 seg.
-
-</dd>
-</ul><br></div>
+ <b>CORRECTE</b>
+</div>
 <div class="test elemento" data-propiedades="incorrecta ">
 <hr>
 <a name="TEST_9">
@@ -396,10 +382,10 @@ Temps d'execució máxim: 3.23828seg.<br>
 
 <b style="color: red; ">Falla amb 1 errors</b>
 <ul>
-<li>Time out
+<li>Unhandled Exception
 <dd>
-<p> Correction of the test failed due to a out of time. Maximum time of 3.36724s. exceded.<br>
- EXCEPTION TIME OUT 3.367236.Kill command: Python main.py Outputs\Graf50_200_7C_SalesmanBacktracking_Out.txt backtracking TestSalesMan\Graf50_200_7C.GR TestSalesMan\Graf50_200_7C.VIS Outputs\Graf50_200_7C_SalesmanBacktracking.TRK</p>
+<p> Correction of the test failed due to an unhandled exception.<br>
+ EXCEPTION Exit code 1 on command Python main.py Outputs\Graf50_200_7C_SalesmanBacktracking_Out.txt backtracking TestSalesMan\Graf50_200_7C.GR TestSalesMan\Graf50_200_7C.VIS Outputs\Graf50_200_7C_SalesmanBacktracking.TRK</p>
 
 </dd>
 </ul><br></div>
