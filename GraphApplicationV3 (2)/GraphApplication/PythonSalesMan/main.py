@@ -55,7 +55,7 @@ if isCorrection == False:
 
 	#Cerca cami que pasi per les visites
 	#trk=greedy.SalesmanTrackGreedy(g,vis)                       #test greedy   
-	trk=backtracking.SalesmanTrackBacktracking(g,vis)          #test backtracking
+	trk=branchAndBound.SalesmanTrackBranchAndBound1(g,vis)          #test backtracking
 	#trk=backtracking.SalesmanTrackBacktrackingGreedy(g,vis)    #test backtracking-greedy
 	#trk=branchAndBound.SalesmanTrackBranchAndBound2(g,vis)     #test branch&bound
 
